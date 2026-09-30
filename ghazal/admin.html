@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الغزال — مساحة المالكين</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="enhancements.css" />
+</head>
+<body class="admin-body">
+  <main id="owner-login" class="owner-login">
+    <div class="owner-login-mark">غ</div>
+    <p class="eyebrow">الغزال / مساحة خاصة</p>
+    <h1>دخول <em>المالكين</em></h1>
+    <p>هذه المساحة منفصلة عن متجر الغزال العام.</p>
+    <form id="owner-login-form"><label for="owner-code">رمز الدخول</label><input id="owner-code" type="password" autocomplete="current-password" required /><button class="button button-dark" type="submit">فتح لوحة الإدارة <span>↖</span></button><small id="owner-login-error" hidden>رمز الدخول غير صحيح.</small></form>
+  </main>
+
+  <main id="owner-app" class="app-page wrap" hidden>
+    <header class="owner-header"><div><p class="eyebrow">الغزال / مساحة المالكين</p><h1>لوحة <em>المكتبة</em></h1><p>إدارة الكتب، دور النشر، والطلبات من مساحة منفصلة عن المتجر.</p></div><div class="owner-actions"><a class="button button-outline" href="index.html">فتح المتجر <span>↗</span></a><button id="owner-logout" class="text-button" type="button">تسجيل الخروج</button></div></header>
+    <div class="stat-grid"><article><span>الزيارات هذا الشهر</span><strong>١٢٬٨٤٠</strong><small class="positive">↑ ١٨٫٤٪</small></article><article><span>الطلبات</span><strong id="owner-order-count">٠</strong><small>طلبات محفوظة</small></article><article><span>الإيرادات</span><strong id="owner-revenue">٠ د.ج</strong><small>من الطلبات المحفوظة</small></article><article><span>الكتب</span><strong id="owner-book-count">٠</strong><small>في الفهرس</small></article></div>
+    <section class="owner-grid"><article class="dashboard-card"><div class="card-heading"><div><p class="eyebrow">المحتوى</p><h2>إدارة <em>الفهرس</em></h2></div><div class="owner-actions"><button class="button button-dark" data-owner-form="book">إضافة كتاب</button><button class="button button-outline" data-owner-form="publisher">إضافة دار نشر</button><button class="button button-outline" data-owner-form="author">إضافة مؤلف</button></div></div><div class="admin-tabs"><button class="active" data-owner-tab="books">الكتب</button><button data-owner-tab="publishers">دور النشر</button><button data-owner-tab="authors">المؤلفون</button><button data-owner-tab="orders">الطلبات</button></div><div id="owner-list"></div></article><article class="dashboard-card"><div class="card-heading"><div><p class="eyebrow">Ecotrack</p><h2>تصدير <em>الشحنات</em></h2></div></div><p class="owner-copy">الطلبات المؤكدة تُضاف إلى نسخة القالب الأصلية بنفس الأعمدة والترتيب والتنسيق، ثم تُنزّل كملف XLSX جاهز للرفع.</p><button id="owner-export" class="button button-dark" type="button">تحميل ملف Ecotrack <span>↙</span></button><div class="owner-note">القالب محفوظ محليًا باسم upload_ecotrack_v31.xlsx. الطلبات لا تغادر هذا المتصفح في النسخة التجريبية الحالية.</div></article></section>
+  </main>
+
+  <div class="overlay admin-overlay" id="owner-form-overlay" hidden><div class="form-panel" role="dialog" aria-modal="true"><button class="close-button" id="owner-form-close" aria-label="إغلاق">×</button><p class="eyebrow">الغزال / إضافة إلى الفهرس</p><h2 id="owner-form-title"></h2><form class="admin-form" id="owner-form"></form></div></div>
+  <script src="assets/templates/ecotrack-template.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
